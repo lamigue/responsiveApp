@@ -26,7 +26,9 @@ app.factory('UserService', function($resource) {
     };
 
     var b = "b";
-    
+
+    var a = "a";
+
     UserStorage.getUserData = function(userId) {
        return resources.getUserData({user_id:userId}, function(response) {
        });
