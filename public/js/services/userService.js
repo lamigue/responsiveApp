@@ -15,6 +15,7 @@ app.factory('UserService', function($resource) {
            }
        }
    });
+    var a = 1;
 
     var UserStorage = {};
 
