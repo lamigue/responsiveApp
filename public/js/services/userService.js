@@ -1,20 +1,20 @@
 'use strict';
 
 app.factory('UserService', function($resource) {
-		var resources = $resource('http://192.168.6.140:3000/rest/user/:id', null, {
-			 'getUserId' : {
-					 method : "GET",
-					 params : {
-							id : "id"
-					 }
-			 },
-				'getUserData' : {
-					 method : "GET",
-					 params : {
-							id : "data"
-					 }
-			 }
-	 });
+    var resources = $resource('http://' + config.ip + '/rest/user/:id', null, {
+       'getUserId' : {
+           method : "GET",
+           params : {
+              id : "id"
+           }
+       },
+        'getUserData' : {
+           method : "GET",
+           params : {
+              id : "data"
+           }
+       }
+   });
 
 		var UserStorage = {};
 

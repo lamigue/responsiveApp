@@ -27,3 +27,4 @@ $RECYCLE.BIN/
 
 /node_modules
 npm-debug.log
+public/js/constants.js
