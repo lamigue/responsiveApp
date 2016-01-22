@@ -2,7 +2,7 @@
 
 app.factory('UserService', function($resource) {
     var resources = $resource('http://192.168.6.140:3000/rest/user/:id', null, {
-      
+
        'getUserId' : {
            method : "GET",
            params : {
@@ -24,6 +24,8 @@ app.factory('UserService', function($resource) {
         }, function(response) {
         });
     };
+
+    
 
     UserStorage.getUserData = function(userId) {
        return resources.getUserData({user_id:userId}, function(response) {
