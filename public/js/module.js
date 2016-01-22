@@ -1,1 +1,1 @@
-var app = angular.module('wemoApp', ['ngResource']);
+var app = angular.module('wemoApp', ['ngResource', 'ngRoute']);

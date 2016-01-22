@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="wemoApp" >
+<html ng-app="wemoApp">
   <head>
     <title>WeMo app</title>
     <meta charset="utf-8"/>
@@ -12,21 +12,12 @@
   </head>
 
   <body>
-    <div class="starter-template">
-      <h1>Angularjs material design</h1>
-    </div>
-
-    <input type="text" ng-model="ctrl.email" />
-    <input type="button" ng-click="ctrl.getUserId()" value="OK" />
-    <span>{{ctrl.user}}</span>
-    </div>
-
-    <input type="Button" ng-click="ctrl.getUserData()" value="Get data"/>
-    <span>{{ctrl.spanData}}</span>
+    <div ng-view>
 
     <!-- Import javascript -->
     <script src="/vendors/angularjs/angular.min.js"></script>
     <script src="/vendors/angularjs/angular-resource.min.js"></script>
+    <script src="/vendors/angularjs/angular-route.min.js"></script>
 
     <!--<script src="/vendors/angular-aria/angular-aria.js"></script> 
     <script src="/vendors/angular-animate/angular-animate.js"></script> 
@@ -34,8 +25,9 @@
 
 
     <script src="/js/module.js"></script>
+    <script src="/js/route.js"></script>
     <script src="/js/services/userService.js"></script>
     <script src="/js/controllers/mainController.js"></script>
-
+  </div>
   </body>
 </html>
