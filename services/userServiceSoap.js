@@ -45,7 +45,6 @@ userServiceSoap.getUserData = function getUserData(userId, next, callback) {
         var request = {vStr: id};
 
         client.Getuser_data(request, function(err, result) {
-            console.log(result);
             if(err || result.Getuser_dataResult == ""){
                 return next(new UserError("Getuser_data"));
             }
