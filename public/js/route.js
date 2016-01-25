@@ -3,7 +3,7 @@
 app.config(function($routeProvider, $locationProvider) {
     $routeProvider.when("/", {
         templateUrl : '/html/signIn.html',
-        controller : 'MainController as ctrl',
+        controller : 'SignInController as ctrl',
     })
     .when("/signUp", {
         templateUrl : '/html/signUp.html',

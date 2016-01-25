@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('MainController', function(UserService){
+app.controller('SignInController', function(UserService){
 	var self = this; 
 
 	this.getUserId = function(){
@@ -27,5 +27,17 @@ app.controller('MainController', function(UserService){
             }
         });
     }
+
+	this.onSignIn = function(googleUser) {
+	    var profile = googleUser.getBasicProfile();
+	    console.log('ID: ' + profile.getId());
+	    console.log('Name: ' + profile.getName());
+	    console.log('Image URL: ' + profile.getImageUrl());
+	    console.log('Email: ' + profile.getEmail());
+   	}
+
+  	window.onSignIn = this.onSignIn;
 });
+
+
 
