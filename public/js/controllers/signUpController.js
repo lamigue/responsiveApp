@@ -5,10 +5,18 @@ app.controller('SignUpController', function(){
 		address : "",
 		firstname : "alexis"
 	};
+
+	this.radio = {
+		gender : "Male"
+	}
+
+	this.radioGender = [
+		{
+			label: "Male"
+		},
+		{
+			label: "Female"
+		}
+	];
 	
-}).config(function($mdThemingProvider) {
-    // Configure a dark theme with primary foreground yellow
-    $mdThemingProvider.theme('docs-dark', 'default')
-      .primaryPalette('yellow')
-      .dark();
-  });
+});

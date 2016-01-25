@@ -1,14 +1,48 @@
 <md-content layout-padding>
+
 	<div layout-gt-sm="row">
-	      <md-input-container class="md-block" flex-gt-sm>
-	        <label>Name</label>
-	        <input ng-model="ctrl.user.firstName">
-	      </md-input-container>
-	      <md-input-container class="md-block" flex-gt-sm>
-	        <label>Address</label>
-	        <input ng-model="ctrl.user.address">
-	      </md-input-container>
+		<md-input-container class="md-block" flex-gt-sm>
+			<label>Name</label>
+			<input ng-model="ctrl.user.firstName">
+		</md-input-container>
 	</div>
+
+	<div layout-gt-sm="row" >
+		<md-radio-group layout="row" ng-model="ctrl.radio.gender" class="md-primary" flex-gt-sm>
+			<md-radio-button ng-repeat="g in ctrl.radioGender"
+			     ng-value="g.label">{{g.label}}
+			</md-radio-button>
+		</md-radio-group>
+		<md-datepicker ng-model="ctrl.user.birthDate" md-placeholder="Date of birth" flex-gt-sm>
+		</md-datepicker>
+	</div>
+
+	<div layout-gt-sm="row">
+	  <md-input-container class="md-block" flex-gt-sm>
+	    <label>Address</label>
+	    <input ng-model="ctrl.user.address">
+	  </md-input-container>
+	  <md-input-container class="md-block" flex-gt-sm>
+	        <label>Phone number</label>
+	        <input ng-model="ctrl.user.phoneNumber">
+	  </md-input-container>
+	</div>
+
+	<div layout-gt-sm="row">
+	  <md-input-container class="md-block" flex-gt-sm>
+	    <label>National Id card number</label>
+	    <input ng-model="ctrl.user.idCardNumber">
+	  </md-input-container>
+	  <md-input-container class="md-block" flex-gt-sm>
+	        <label>Driving license number</label>
+	        <input ng-model="ctrl.user.drivingLicense">
+	  </md-input-container>
+	</div>
+
+	<md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="checkbox" class="md-primary">
+		I understand and agree to the terms and conditions.
+	</md-checkbox>
+
 </md-content layout-padding>
 
 <a href="/">click</a>
