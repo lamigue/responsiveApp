@@ -5,8 +5,6 @@ app.controller('SignUpController', function(){
 		address : "",
 		firstname : "alexis"
 	};
-
-	this.tg = "tg";
 	
 }).config(function($mdThemingProvider) {
     // Configure a dark theme with primary foreground yellow

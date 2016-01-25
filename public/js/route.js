@@ -2,11 +2,11 @@
 
 app.config(function($routeProvider, $locationProvider) {
     $routeProvider.when("/", {
-        templateUrl : '../html/signIn.html',
+        templateUrl : '/html/signIn.html',
         controller : 'MainController as ctrl',
     })
     .when("/signUp", {
-        templateUrl : '../html/signUp.html',
+        templateUrl : '/html/signUp.html',
         controller : 'SignUpController as ctrl',
     })
     .otherwise({
