@@ -6,6 +6,10 @@ body{
     background-attachment:fixed;
 }
 
-.inset{
+.inset {
 	padding:4%;
+}
+
+.google-button {
+	width: 200px;
 }

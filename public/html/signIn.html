@@ -13,13 +13,17 @@
 	<google-plus-signin clientid="702661689957-vmsgou0temc1nbmq7j6adf898s7f4tr3.apps.googleusercontent.com"></google-plus-signin>
 	-->
 <div class="inset" hide-xs></div>
-<div class="sign-up-container" layout="row" layout-align="center start">
-	<md-card flex-gt-sm="45" flex-gt-md="35" flex-gt-lg="30">
+<div class="sign-up-container" layout="row" layout-align="center center">
+	<md-card flex-gt-sm="45" flex-gt-md="35" flex-gt-lg="30" layout-align="center center">
 		<md-card-header>
 		 <img class="md-card-image" src="img/logo_title.svg">
 		</md-card-header>
 		<md-card-content>
-			<google-plus-signin clientid="702661689957-vmsgou0temc1nbmq7j6adf898s7f4tr3.apps.googleusercontent.com" ></google-plus-signin>
+			<google-plus-signin clientid="702661689957-vmsgou0temc1nbmq7j6adf898s7f4tr3.apps.googleusercontent.com" autorender="false" customtargetid="my-custom-element">
+				<div id="my-custom-element">
+					<md-button class="md-raised google-button"><md-icon md-svg-src="img/ic_google.svg"></md-icon>Sign in</md-button>
+				</div>
+			</google-plus-signin>
 		</md-card-content>
 	</md-card>
 </div>
