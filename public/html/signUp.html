@@ -1,6 +1,13 @@
 <div class="sign-up-container" layout="row" layout-align="center center">
-	<md-card flex-gt-sm="60" flex-md="40" flex-gt-md="30">
+	<md-card flex-gt-sm="45" flex-gt-md="35" flex-gt-lg="30">
 		<md-card-content>
+			<div layout-gt-sm="row">
+				<md-radio-group layout-padding layout-margin layout-align="center center" layout="row" ng-model="ctrl.radio.gender" class="md-primary md-block">
+				<md-radio-button ng-repeat="g in ctrl.radioGender"
+				     ng-value="g.label">{{g.label}}
+				</md-radio-button>
+			</div>
+			</md-radio-group>
 			<div layout-gt-sm="row">
 				<md-input-container class="md-icon-float md-block" flex-gt-sm>
 
@@ -10,19 +17,8 @@
 					<input ng-model="ctrl.user.firstName">
 				</md-input-container>
 			</div>
-
-			<div layout-gt-sm="row">
-				<md-radio-group layout="row" layout-align-gt-sm="start center" layout-align="center center" ng-model="ctrl.radio.gender" class="md-primary">
-					<md-radio-button ng-repeat="g in ctrl.radioGender"
-					     ng-value="g.label">{{g.label}}
-					</md-radio-button>
-				</md-radio-group>
-				<div layout-align-gt-sm="center center" layout-align="center center">
-					<md-datepicker layout-align="center center" ng-model="ctrl.user.birthDate" md-placeholder="Date of birth">
+					<md-datepicker layout-padding layout-margin ng-model="ctrl.user.birthDate" class="md-block" md-placeholder="Date of birth">
 					</md-datepicker>
-				</div>
-
-			</div>
 
 			<div layout-gt-sm="row">
 			  <md-input-container class="md-block" flex-gt-sm>
