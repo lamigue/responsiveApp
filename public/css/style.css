@@ -1,9 +1,11 @@
 /* Sign up style */
 
-.sign-up-container{
-	height:100vh;
+body{
 	background-color: #edeff2;
 	background-size: cover;
     background-attachment:fixed;
 }
 
+.inset{
+	padding:4%;
+}
