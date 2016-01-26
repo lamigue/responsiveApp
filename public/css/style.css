@@ -1,6 +1,7 @@
 
 html{
 	height:auto;
+	background-color: #edeff2;
 	background-image: url(../img/background.jpg);
 	background-size: cover;
     background-attachment:fixed;
