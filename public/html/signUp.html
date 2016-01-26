@@ -1,8 +1,12 @@
 <div class="sign-up-container" layout="row" layout-align="center center">
 	<md-card flex-gt-sm="45" flex-gt-md="35" flex-gt-lg="30">
+		<md-card-header>
+		 <img class="md-card-image" src="img/logo_title.svg">
+		</md-card-header>
+
 		<md-card-content>
-			<div layout-gt-sm="row">
-				<md-radio-group layout-padding layout-margin layout-align="center center" layout="row" ng-model="ctrl.radio.gender" class="md-primary md-block">
+			<div layout-gt-sm="row" layout-align="center center">
+				<md-radio-group layout-padding layout-margin layout="row" ng-model="ctrl.radio.gender" class="md-primary md-block">
 				<md-radio-button ng-repeat="g in ctrl.radioGender"
 				     ng-value="g.label">{{g.label}}
 				</md-radio-button>
