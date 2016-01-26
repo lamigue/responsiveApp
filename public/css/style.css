@@ -1,9 +1,11 @@
 /* Sign up style */
 
+html{
+	background-color: #edeff2;
+}
+
 body{
 	background-color: #edeff2;
-	background-size: cover;
-    background-attachment:fixed;
 }
 
 .inset {
@@ -12,4 +14,8 @@ body{
 
 .google-button {
 	width: 200px;
+}
+
+.birth-date{
+	padding:3% !important;
 }
