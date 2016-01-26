@@ -1,1 +1,1 @@
-var app = angular.module('wemoApp', ['ngResource', 'ngRoute', 'ngMaterial', 'directive.g+signin']);
+var app = angular.module('wemoApp', ['ngResource', 'ngRoute', 'ngMaterial', 'directive.g+signin', 'ngMessages']);
