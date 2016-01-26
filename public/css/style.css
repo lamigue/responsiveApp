@@ -1,14 +1,14 @@
 
 html{
-	height:auto;
-	background-image: url(../img/background.jpg);
-	background-size: cover;
-    background-attachment:fixed;
+
 }
 
 /* Sign up style */
 
 .sign-up-container{
 	height:100vh;
+	background-image: url(../img/background.jpg);
+	background-size: cover;
+    background-attachment:fixed;
 }
 
