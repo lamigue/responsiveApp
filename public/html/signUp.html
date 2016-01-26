@@ -22,9 +22,10 @@
 					<input ng-model="ctrl.user.firstName">
 				</md-input-container>
 			</div>
-					<md-datepicker layout-padding layout-margin ng-model="ctrl.user.birthDate" class="md-block" md-placeholder="Date of birth">
-					</md-datepicker>
-
+			<div class="birth-date">
+			<md-datepicker ng-model="ctrl.user.birthDate" class="md-block" md-placeholder="Date of birth">
+			</md-datepicker>
+			</div>
 			<div layout-gt-sm="row">
 			  <md-input-container class="md-block" flex-gt-sm>
 			    <label>Address</label>
@@ -56,7 +57,12 @@
 				I understand and agree to the terms and conditions.
 			</md-checkbox>
 
-		</md-card-content layout-padding>
+		</md-card-content>
+		<md-card-footer>
+			<div layout="row">
+		       <md-button class="md-raised md-primary" flex>Return</md-button><md-button class="md-raised md-primary" flex>Next</md-button>
+		   </div>
+		</md-card-footer>
 	</md-card>
 </div>
 
