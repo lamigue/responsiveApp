@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('SignInController', function(UserService){
+app.controller('SignInController', function($scope, UserService, $window, $location){
 	var self = this; 
 
 	this.getUserId = function(){
@@ -28,15 +28,15 @@ app.controller('SignInController', function(UserService){
         });
     }
 
-	this.onSignIn = function(googleUser) {
-	    var profile = googleUser.getBasicProfile();
-	    console.log('ID: ' + profile.getId());
-	    console.log('Name: ' + profile.getName());
-	    console.log('Image URL: ' + profile.getImageUrl());
-	    console.log('Email: ' + profile.getEmail());
-   	}
-
-  	window.onSignIn = this.onSignIn;
+    $scope.$on('event:google-plus-signin-success', function (event, authResult) {
+      	// User successfully authorized the G+ App!
+      	console.log('Signed in!');
+      	$window.location.href = '/signUp';
+    });
+	$scope.$on('event:google-plus-signin-failure', function (event, authResult) {
+      	// User has not authorized the G+ App!
+      	console.log('Not signed into Google Plus.');
+    });
 });
 
 

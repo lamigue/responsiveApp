@@ -29,10 +29,7 @@ userServiceSoap.getUserId = function getUserId(email, next, callback) {
       	else{
       		callback(user);
       	}
-
     });
-
-    
   });    
 }
 

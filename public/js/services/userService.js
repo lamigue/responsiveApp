@@ -1,7 +1,7 @@
 'use strict';
 
 app.factory('UserService', function($resource) {
-    var resources = $resource('http://' + config.ip + '/rest/user/:id', null, {
+    var resources = $resource('http://wemoweb.com:3000/rest/user/:id', null, {
        'getUserId' : {
            method : "GET",
            params : {
