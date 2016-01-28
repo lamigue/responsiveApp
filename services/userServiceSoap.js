@@ -56,5 +56,28 @@ userServiceSoap.getUserData = function getUserData(userId, next, callback) {
     });
 }
 
+//Create user data on WeMo server
+userServiceSoap.setUserData = function setUserData(user, next, callback) {
+    soap.createClient(this.url, function(err, client) {
+        console.log(user);
+
+        var userString = JSON.stringify(user);
+
+        console.log(userString);
+        var request = {vStr: userString};
+
+        console.log(request);
+
+        client.Setuser_data(request, function(err, result) {
+            if(err || result.Setuser_dataResult == ""){
+                return next(new UserError("Setuser_data"));
+            }
+
+            var data = JSON.parse(result.Setuser_dataResult);
+            callback(data);
+        });
+    });
+}
+
 
 module.exports = userServiceSoap;

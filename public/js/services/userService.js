@@ -13,6 +13,12 @@ app.factory('UserService', function($resource) {
            params : {
               id : "data"
            }
+       },
+       'setUserData' : {
+          method : "POST",
+          params : {
+            id : "data"
+          }
        }
    });
 
@@ -28,6 +34,11 @@ app.factory('UserService', function($resource) {
 			 return resources.getUserData({user_id:userId}, function(response) {
 			 });
 		};
+
+    UserStorage.setUserData = function(user) {
+       return resources.setUserData(user, function(response) {
+       });
+    };
 
 		return UserStorage;
 });

@@ -21,4 +21,12 @@ router.get('/user/data', function(req, res, next) {
     });
 });
 
+router.post('/user/data', function(req, res, next) {
+	console.log("VOS GUEULES !");
+	console.log(req.body);
+    userServiceSoap.setUserData(req.body, next, function(response) {
+        res.send(response);
+    });
+});
+
 module.exports = router;
