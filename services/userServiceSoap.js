@@ -1,7 +1,8 @@
 var soap = require('soap');
+var config = require('constants');
 
 var userServiceSoap = {
-	url : 'http://60.248.200.133/EMOTOR/Service.asmx?WSDL'
+	url : config.url
 };
 
 function UserError(type) {

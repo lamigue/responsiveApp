@@ -56,16 +56,18 @@
       </div>
     </md-toolbar>
 
-
     <md-content flex>
-      <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+      <ui-gmap-google-map center='map.center' zoom='map.zoom' options="map.options">
+        <ui-gmap-markers models="markers" coords="'self'" modelsbyref="false"/>
+      </ui-gmap-google-map>
     </md-content>
 
-
-<!--     <div layout-fill>
-      <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
-    </div> -->
-
+    <div layout="row" layout-align="center center">
+      <md-button  class="md-raised" ng-click="ctrl.addMarkers();">Add markers</md-button>
+    </div>
+    
   </div>
+
 </div>
+
 
