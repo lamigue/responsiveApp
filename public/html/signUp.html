@@ -6,10 +6,12 @@
 		</md-card-header>
 
 		<md-card-content>
+		    <form name="userForm">
+
 			<div layout-gt-sm="row" layout-align="center center">
-				<md-radio-group layout-padding layout-margin layout="row" ng-model="ctrl.radio.gender" class="md-primary md-block">
+				<md-radio-group layout-padding layout-margin layout="row" ng-model="ctrl.user.gender" class="md-primary md-block">
 				<md-radio-button ng-repeat="g in ctrl.radioGender"
-				     ng-value="g.label">{{g.label}}
+				     ng-value="g.label">{{g.name}}
 				</md-radio-button>
 			</div>
 			</md-radio-group>
@@ -19,59 +21,63 @@
 					<label>Name</label>
 			        <md-icon md-svg-src="img/ic_person_24px.svg" class="name"></md-icon>
 
-					<input ng-model="ctrl.user.firstName">
+					<input ng-model="ctrl.user.name" name="firstName" required>
 				</md-input-container>
 			</div>
 			<div class="birth-date">
-			<md-datepicker ng-model="ctrl.user.birthDate" class="md-block" md-placeholder="Date of birth">
+			<md-datepicker ng-model="ctrl.birth" ng-change="ctrl.convert()" class="md-block" required md-placeholder="Date of birth">
 			</md-datepicker>
 			</div>
 			<div layout-gt-sm="row">
-			  <md-input-container class="md-block" flex-gt-sm>
+			  <md-input-container class="md-block"  flex-gt-sm>
 			    <label>Address</label>
 			    <md-icon md-svg-src="img/ic_place_24px.svg" style="display:inline-block;"></md-icon>
-			    <input ng-model="ctrl.user.address">
+			    <input ng-model="ctrl.user.address" name="address" required>
 			  </md-input-container>
+          	</md-input-container>
 			  <md-input-container class="md-block" flex-gt-sm>
 			        <label>Phone number</label>
 		            <md-icon md-svg-src="img/ic_phone_24px.svg"></md-icon>
-			        <input maxlength="10" md-maxlength="10" ng-keypress="ctrl.validateInput($event)" ng-model="ctrl.user.phoneNumber"
-                   required ng-pattern="/^[0-9]{5}$/">
+			        <input maxlength="10" md-maxlength="10" ng-keypress="ctrl.validateInput($event, '^[0-9]$')" name="phoneNumber" ng-model="ctrl.user.phone"
+                   required ng-pattern="/^[0-9]{10}$/" >
               <div ng-messages="userForm.phoneNumber.$error" role="alert" multiple>
-              <div ng-message="required" class="my-message">You must supply a postal code.</div>
-              <div ng-message="pattern" class="my-message">That doesn't look like a valid postal
-                code.
-              </div>
-              <div ng-message="md-maxlength" class="my-message">
-                Don't use the long version silly...we don't need to be that specific...
-              </div>
+	              <div ng-message="pattern" class="my-message">That doesn't look like a valid phone number
+	              </div>
               </div>
 			  </md-input-container>
-			</div>
+            </div>
 
 			<div layout-gt-sm="row">
 			  <md-input-container class="md-icon-float md-block" flex-gt-sm>
-			    <label>National Id card number</label>
-		       	<md-icon md-svg-src="img/ic_id_card_24px.svg"></md-icon>
-			    <input maxlength="10" ng-model="ctrl.user.idCardNumber">
+				    <label>National Id card number</label>
+			       	<md-icon md-svg-src="img/ic_id_card_24px.svg"></md-icon>
+				    <input maxlength="10" md-maxlength="10" ng-keypress="ctrl.validateInput($event, '^[a-z0-9]$')" name="idCard" required ng-pattern="/^[a-z0-9]{10}$/i" ng-model="ctrl.user.id">
+	              <div ng-messages="userForm.idCard.$error" role="alert" multiple>
+		              <div ng-message="pattern" class="my-message">That doesn't look like a valid national id card
+		              </div>
+	              </div>
 			  </md-input-container>
 			  <md-input-container class="md-icon-float md-block" flex-gt-sm>
 			        <label>Driving license number</label>
 			       	<md-icon md-svg-src="img/ic_car_24px.svg" class="drive"></md-icon>
-
-			        <input maxlength="10" ng-model="ctrl.user.drivingLicense">
+			        <input maxlength="10" md-maxlength="10" ng-keypress="ctrl.validateInput($event, '^[a-z0-9]$')" name="drivingLicense" required ng-pattern="/^[a-z0-9]{10}$/i" ng-model="ctrl.user.license">
+	              <div ng-messages="userForm.drivingLicense.$error" role="alert" multiple>
+		              <div ng-message="pattern" class="my-message">That doesn't look like a valid driving license
+		              </div>
+	              </div>
 			  </md-input-container>
 			</div>
 
-			<md-checkbox md-no-ink aria-label="Checkbox No Ink" ng-model="checkbox" class="md-primary">
+			<md-checkbox md-no-ink aria-label="Checkbox No Ink" required ng-model="checkbox" class="md-primary">
 				I understand and agree to the terms and conditions.
 			</md-checkbox>
-
+		</form>
 		</md-card-content>
 		<md-card-footer>
 			<div layout="row">
-		       <md-button class="md-raised md-primary" flex>Return</md-button><md-button class="md-raised md-primary" flex>Next</md-button>
+		       <md-button class="md-raised md-primary" ng-click="ctrl.return()" flex>Return</md-button><md-button class="md-raised md-primary" ng-disabled="!userForm.$valid" ng-click="ctrl.signUp()" flex>Next</md-button>
 		   </div>
+		   {{ctrl.test}}
 		</md-card-footer>
 	</md-card>
 </div>
