@@ -9,6 +9,10 @@ app.config(function($routeProvider, $locationProvider) {
         templateUrl : '/html/signUp.html',
         controller : 'SignUpController as ctrl',
     })
+    .when("/maps", {
+        templateUrl : '/html/main.html',
+        controller : 'MainController as ctrl',
+    })
     .otherwise({
     	redirectTo:'/'
     });

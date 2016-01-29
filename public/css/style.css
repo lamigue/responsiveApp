@@ -1,10 +1,6 @@
 /* Sign up style */
 
-html{
-	background-color: #edeff2;
-}
-
-body{
+html, body {
 	background-color: #edeff2;
 }
 
@@ -18,4 +14,28 @@ body{
 
 .birth-date{
 	padding:3% !important;
+}
+
+.angular-google-map-container {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+
+md-content.md-default-theme {
+  background-color: $gray;
+}
+
+md-toolbar {
+  .md-button.md-default-theme {
+    border-radius: 99%; // round toolbar buttons
+  }
+}
+
+md-sidenav {
+  fill: #737373;
+  ng-md-icon {
+    position: relative;
+    top: 5px; // adjust for svg viewbox
+  }
 }
