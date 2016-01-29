@@ -1,5 +1,5 @@
 var soap = require('soap');
-var config = require('constants');
+var config = require('./constants');
 
 var userServiceSoap = {
 	url : config.url
