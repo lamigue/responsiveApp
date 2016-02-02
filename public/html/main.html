@@ -1,4 +1,4 @@
-<div layout="row" class="view">
+<div layout="row" layout-fill class="view">
    <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')">
     <md-toolbar class="md-tall md-hue-2">
       <span flex></span>
@@ -12,7 +12,7 @@
       </div>
     </md-toolbar>
     <md-list>
-      <md-item ng-repeat="item in menu">
+      <md-item ng-repeat="item in ctrl.menu">
         <a>
           <md-item-content md-ink-ripple layout="row" layout-align="start center">
             <div class="inset">
@@ -57,13 +57,15 @@
     </md-toolbar>
 
     <md-content flex>
-      <ui-gmap-google-map center='map.center' zoom='map.zoom' options="map.options">
-        <ui-gmap-markers models="markers" coords="'self'" modelsbyref="false"/>
+      <ui-gmap-google-map center='ctrl.map.center' zoom='ctrl.map.zoom' options="ctrl.map.options">
+        <ui-gmap-markers models="ctrl.markers" coords="'self'" modelsbyref="false"/>
+        <ui-gmap-markers models='ctrl.markers' coords="'ctrlcoords'" options="ctrl.options"></ui-gmap-markers>
       </ui-gmap-google-map>
     </md-content>
 
     <div layout="row" layout-align="center center">
       <md-button  class="md-raised" ng-click="ctrl.addMarkers();">Add markers</md-button>
+      <md-button  class="md-raised" ng-click="ctrl.showPath();" ng-disabled="ctrl.isDisabled">Show path</md-button>
     </div>
     
   </div>
