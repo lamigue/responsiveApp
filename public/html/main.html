@@ -57,10 +57,14 @@
     </md-toolbar>
 
     <md-content flex>
-      <ui-gmap-google-map center='ctrl.map.center' zoom='ctrl.map.zoom' options="ctrl.map.options">
-        <ui-gmap-markers models="ctrl.markers" coords="'self'" modelsbyref="false"/>
-        <ui-gmap-markers models='ctrl.markers' coords="'ctrlcoords'" options="ctrl.options"></ui-gmap-markers>
+
+      <ui-gmap-google-map control='ctrl.map.control' center='ctrl.map.center' zoom='ctrl.map.zoom' options='ctrl.map.options'>
+
+        <ui-gmap-markers models='ctrl.markers' coords="'self'" modelsbyref='false' options='ctrl.marker.options'/>
+
       </ui-gmap-google-map>
+
+      <div id="map"></div>
     </md-content>
 
     <div layout="row" layout-align="center center">
@@ -71,5 +75,4 @@
   </div>
 
 </div>
-
 

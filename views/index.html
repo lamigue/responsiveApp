@@ -4,19 +4,18 @@
     <title>WeMo app</title>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<!--     <meta name="google-signin-scope" content="profile email">
-    <meta name="google-signin-client_id" content="702661689957-vmsgou0temc1nbmq7j6adf898s7f4tr3.apps.googleusercontent.com"> -->
-
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="702661689957-vmsgou0temc1nbmq7j6adf898s7f4tr3.apps.googleusercontent.com">
+    
     <!-- CSS -->
     <link rel="stylesheet" href="/vendors/angular-material/angular-material.min.css">
     <link rel="stylesheet" href="/css/style.css">
   </head>
 
-
   <body>
-      <ng-view></ng-view>
+    <ng-view></ng-view>
   </body>
 
   <!-- Import javascript -->
@@ -40,12 +39,15 @@
   <!-- Angular Google maps 2.3.0 & other libs for it -->
   <script src="/vendors/angular-google-maps/angular-google-maps.min.js"></script>
   <script src="//maps.googleapis.com/maps/api/js"></script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgUOA9Kb90jhDUcpc6mcwmE0zf9yFQZfA&signed_in=true&callback=initMap()" async defer></script> -->
+
   <script src="/vendors/angular-simple-logger/angular-simple-logger.min.js"></script>
   <script src="/vendors/lodash/lodash.js"></script>
 
   <script src="/js/module.js"></script>
   <script src="/js/route.js"></script>
   <script src="/js/services/userService.js"></script>
+  <script src="/js/services/mapsService.js"></script>
   <script src="/js/controllers/signInController.js"></script>
   <script src="/js/controllers/signUpController.js"></script>
   <script src="/js/controllers/mainController.js"></script>

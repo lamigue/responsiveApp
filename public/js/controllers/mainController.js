@@ -1,19 +1,13 @@
 'use strict';
 
-app.controller('MainController', function($scope, $mdBottomSheet, $mdSidenav, $mdDialog, uiGmapGoogleMapApi){
+app.controller('MainController', function($scope, $mdBottomSheet, $mdSidenav, $mdDialog, uiGmapGoogleMapApi, MapsService){
 	
 	var self = this;
 	this.markers = [];
 	this.isDisabled = true;
 
-	var flightPlanCoordinates = [
-    new google.maps.LatLng(37.772323, -122.214897),
-    new google.maps.LatLng(21.291982, -157.821856),
-    new google.maps.LatLng(-18.142599, 178.431),
-    new google.maps.LatLng(-27.46758, 153.027892)
-  ];
-
 	this.map = {
+		control:{},
 		center: {
 			latitude: 43.59,
 			longitude: 7.05
@@ -24,50 +18,53 @@ app.controller('MainController', function($scope, $mdBottomSheet, $mdSidenav, $m
 		}
 	};
 
-	var markers = [
-		{	
-			id: 1, 
-			latitude: 43.59746363455936,
-			longitude: 7.057522237300873
-		},
-		{	
-			id: 2, 
-			latitude: 43.58315764287409,
-			longitude: 7.055926322937011
-		},
-		{
-			id: 3, 
-			latitude: 43.589314453980286, 
-			longitude: 7.055642008781433
-		},
-		{
-			id: 4, 
-			latitude: 43.59261505363832, 
-			longitude: 7.042936384677886
-		},
-		{
-			id: 5, 
-			latitude: 43.58043360188376, 
-			longitude: 7.043419182300568
+	this.marker = {
+		options: {
+		   	icon:'../../img/scooter.png'
 		}
-	];
+	};
+
+	var markers = [
+	    { 
+	      id: 1, 
+	      latitude: 43.59746363455936,
+	      longitude: 7.057522237300873
+	    },
+	    { 
+	      id: 2, 
+	      latitude: 43.58315764287409,
+	      longitude: 7.055926322937011
+	    },
+	    {
+	      id: 3, 
+	      latitude: 43.589314453980286, 
+	      longitude: 7.055642008781433
+	    },
+	    {
+	      id: 4, 
+	      latitude: 43.59261505363832, 
+	      longitude: 7.042936384677886
+	    },
+	    {
+	      id: 5, 
+	      latitude: 43.58043360188376, 
+	      longitude: 7.043419182300568
+	    }
+  	];
+
+	$scope.onClick = function(marker) {
+	  $scope.selectedMarker = marker.model;
+	}
 
 	this.addMarkers = function() {
 		angular.forEach(markers, function(value, key) {
-			self.markers[key] = value; 
+				self.markers[key] = value;			
 		});
 		this.isDisabled = false;
 	}
 
 	this.showPath = function() {
- 		var directionsDisplay = new google.maps.DirectionsRenderer();
-        var displayedMap = this.map;
-        googleDirections.getDirections(getDirectionsArgs).then(function (directions) {
-          directionsDisplay.setOptions({ suppressMarkers: true });
-          directionsDisplay.setMap(displayedMap);
-          directionsDisplay.setDirections(directions);
-          directionsDisplay.setPanel(document.getElementById("directions-panel"));
-        });
+		MapsService.showPath(self.map);
 	}
 
 	$scope.toggleSidenav = function(menuId) {

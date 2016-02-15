@@ -24,7 +24,6 @@ $RECYCLE.BIN/
 # OSX
 # =========================
 
-
 /node_modules
 npm-debug.log
 public/js/constants.js

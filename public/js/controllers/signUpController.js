@@ -1,6 +1,8 @@
 'use strict';
 
 app.controller('SignUpController', function(UserService){
+	window.scrollTo(0,1);
+	
 	var self = this;
 
 	this.user = {
